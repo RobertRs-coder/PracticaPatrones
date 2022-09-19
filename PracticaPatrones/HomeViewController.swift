@@ -9,6 +9,11 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    //MARK: IBOUtlets
+
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

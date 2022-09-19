@@ -27,7 +27,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="mWD-yk-Dkc">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="mWD-yk-Dkc" customClass="CellViewController" customModule="PracticaPatrones" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="185" height="185"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yKc-wi-4pR">
@@ -67,6 +67,11 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="185" height="185"/>
+                                        <connections>
+                                            <outlet property="cellImage" destination="3Ez-1X-S5O" id="ysQ-Qc-h9O"/>
+                                            <outlet property="cellLabel" destination="7Fa-ns-8Xd" id="3Ne-mV-VkX"/>
+                                            <outlet property="cellView" destination="tMd-VL-hM6" id="RZN-0n-7Ge"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -80,6 +85,11 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="c8d-GB-wUj" secondAttribute="bottom" id="weQ-L3-aXf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cellImage" destination="3Ez-1X-S5O" id="W5G-Ha-fxI"/>
+                        <outlet property="cellLabel" destination="7Fa-ns-8Xd" id="fmV-X2-74j"/>
+                        <outlet property="cellView" destination="5EZ-qb-Rvc" id="8kK-RM-8tR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
