@@ -35,6 +35,9 @@
                             <constraint firstItem="BpH-cx-Jo2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jeP-ZG-Wtr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="lbc-i0-0rS" id="mnU-pY-fhc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
