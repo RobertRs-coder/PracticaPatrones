@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SplashViewController.swift
 //  PracticaPatrones
 //
 //  Created by Roberto Rojo Sahuquillo on 19/9/22.
@@ -7,15 +7,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SplashViewController: UIViewController {
     
     //MARK: IBOutlets
+
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    //MARK: Constants
+
     
     //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        loadData()
     }
     
     //We animate the activityIndicator if it is not animated when viewWillAppear
@@ -35,7 +40,13 @@ class ViewController: UIViewController {
     private func loadData() {
         //Create new thread in main thread after now + 3 seconds and do the clousure -> navigate next view
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
-        // TODO: navigate next view
+            // TODO: navigate next view
+            let homeStoryboard = UIStoryboard(name: "HomeView", bundle: nil)
+                
+                guard let destinationViewController = homeStoryboard.instantiateInitialViewController() else { return }
+                
+                self.navigationController?.setViewControllers([destinationViewController], animated: false)
+                
         }
     }
 
