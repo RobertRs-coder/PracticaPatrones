@@ -44,13 +44,9 @@ class SplashViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
             // TODO: navigate next view
             let homeStoryboard = UIStoryboard(name: self.storyboardName, bundle: nil)
-//            guard let destinationViewController = homeStoryboard.instantiateInitialViewController() else { return }
+            guard let destinationViewController = homeStoryboard.instantiateInitialViewController() else { return }
             
-            //How & Why to do it without initialController option
-            guard let destinationViewController = homeStoryboard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController else { return }
-            
-            
-                self.navigationController?.setViewControllers([destinationViewController], animated: true)
+            self.navigationController?.setViewControllers([destinationViewController], animated: true)
                 
         }
     }
