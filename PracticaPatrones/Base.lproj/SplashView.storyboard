@@ -19,7 +19,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondo1" translatesAutoresizingMaskIntoConstraints="NO" id="BpH-cx-Jo2">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="lbc-i0-0rS">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="lbc-i0-0rS">
                                 <rect key="frame" x="176.66666666666666" y="403.66666666666669" width="37" height="37"/>
                                 <color key="color" systemColor="systemRedColor"/>
                             </activityIndicatorView>
