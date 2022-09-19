@@ -10,15 +10,19 @@ import Foundation
 import UIKit
 
 class CellViewController: UICollectionViewCell {
-    
-    @IBOutlet var cellView: UIView!
+    //MARK: IBOutlets
+    @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var cellLabel: UILabel!
     
-    
-    override class func awakeFromNib() {
+    override func awakeFromNib() {
         super.awakeFromNib()
-        
+        cellImage.layer.cornerRadius = 4.0
+        cellView.layer.cornerRadius = 4.0
+        cellView.layer.shadowColor = UIColor.gray.cgColor
+        cellView.layer.shadowOffset = .zero
+        cellView.layer.shadowOpacity = 0.7
+        cellView.layer.shadowRadius = 4.0
     }
     
     override func prepareForReuse() {
