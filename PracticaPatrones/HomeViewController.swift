@@ -10,10 +10,9 @@ import UIKit
 class HomeViewController: UIViewController {
 
     //MARK: IBOUtlets
+
+
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,7 +29,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        0
+        sampleCharactersData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -38,8 +37,13 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        UICollectionViewCell()
-    }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellViewController.cellIndentifier, for: indexPath) as? CellViewController
+        
+        if indexPath.row < sampleCharactersData.count {
+            cell?.updateView(data: sampleCharactersData[indexPath.row])
+            }
+            return cell ?? UICollectionViewCell()
+        }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //TODO: Navegate to detail

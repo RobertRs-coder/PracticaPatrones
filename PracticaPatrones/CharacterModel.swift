@@ -11,37 +11,84 @@ import Foundation
 typealias CharactersModel = [CharacterModel]
 
 
-struct CharacterModel {
-    var image: String?
-    var name: String
-    var lastname: String
-    var score: Float = 0.0
+enum CharacterType {
+    case heroe
+    case villain
 }
 
-let sampleCharactersData: CharactersModel = [
-    CharacterModel(image: "img_rachel",
-                   name: "Rachel",
-                   lastname: "Green",
-                   score: 10.0),
-    CharacterModel(image: "img_ross",
-                   name: "Ross",
-                   lastname: "Geller",
-                   score: 9.8),
-    CharacterModel(image: "img_monica",
-                   name: "Monica",
-                   lastname: "Geller",
-                   score: 9.0),
-    CharacterModel(image: "img_chandler",
-                   name: "Chandler",
-                   lastname: "Bing",
-                   score: 8.0),
-    CharacterModel(image: "img_joey",
-                   name: "Joey",
-                   lastname: "Tribbiani",
-                   score: 9.2),
-    CharacterModel(image: "img_phoebe",
-                   name: "Phoebe",
-                   lastname: "Buffay",
-                   score: 8.5)
+struct CharacterModel {
+    var id: Int
+    var name: String
+    var description: String
+    var image: String?
+    var type: CharacterType
+}
+
+let heroes: CharactersModel = [CharacterModel(id: 01,
+                                              name: "Goku",
+                                              description: "The guy",
+                                              image: "test.jpg",
+                                              type: .heroe),
+                               CharacterModel(id: 02,
+                                              name: "Gohan",
+                                              description: "The guy",
+                                              image: "test.jpg",
+                                              type: .heroe),
+                               CharacterModel(id: 03,
+                                              name: "Trunks",
+                                              description: "The guy",
+                                              image: "test.jpg",
+                                              type: .heroe),
+                               CharacterModel(id: 04,
+                                              name: "Vegeta",
+                                              description: "The guy",
+                                              image: "test.jpg",
+                                              type: .heroe),
+                               CharacterModel(id: 05,
+                                              name: "Krilin",
+                                              description: "The guy",
+                                              image: "test.jpg",
+                                              type: .heroe),
+                               CharacterModel(id: 06,
+                                              name: "Piccolo",
+    
+                                              description: "The guy",
+                                              image: "test.jpg",
+                                              type: .heroe)
 ]
+
+// Create list of Villains
+let villains: CharactersModel = [CharacterModel(id: 11,
+                                                name: "Freezer",
+                                                description: "The guy",
+                                                image: "test.jpg",
+                                                type: .villain),
+                                 CharacterModel(id: 12,
+                                                name: "Bu",
+                                                description: "The guy",
+                                                image: "test.jpg",
+                                                type: .villain),
+                                 CharacterModel(id: 13,
+                                                name: "Broly",
+                                                description: "The guy",
+                                                image: "test.jpg",
+                                                type: .villain),
+                                 CharacterModel(id: 14,
+                                                name: "Cell",
+                                                description: "The guy",
+                                                image: "test.jpg",
+                                                type: .villain),
+                                 CharacterModel(id: 15,
+                                                name: "Ginyu",
+                                                description: "The guy",
+                                                image: "test.jpg",
+                                                type: .villain),
+                                 CharacterModel(id: 16,
+                                                name: "Dabra",
+                                                description: "The guy",
+                                                image: "test.jpg",
+                                                type: .villain)
+]
+
+let sampleCharactersData: CharactersModel = heroes + villains
 

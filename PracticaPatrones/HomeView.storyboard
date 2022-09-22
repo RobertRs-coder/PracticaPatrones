@@ -27,7 +27,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="mWD-yk-Dkc" customClass="CellViewController" customModule="PracticaPatrones" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellViewController" id="mWD-yk-Dkc" customClass="CellViewController" customModule="PracticaPatrones" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="185" height="185"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yKc-wi-4pR">
@@ -43,7 +43,6 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Fa-ns-8Xd">
                                                             <rect key="frame" x="0.0" y="156.33333333333334" width="175" height="18.666666666666657"/>
                                                             <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
-                                                            <color key="textColor" systemColor="systemBackgroundColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -68,7 +67,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="185" height="185"/>
                                         <connections>
-                                            <outlet property="cellImage" destination="3Ez-1X-S5O" id="XPh-eS-UUU"/>
+                                            <outlet property="cellImage" destination="3Ez-1X-S5O" id="dAj-8V-AEo"/>
                                             <outlet property="cellLabel" destination="7Fa-ns-8Xd" id="DVp-rp-EL9"/>
                                             <outlet property="cellView" destination="tMd-VL-hM6" id="RbK-jz-txH"/>
                                         </connections>
@@ -86,7 +85,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="c8d-GB-wUj" id="SW6-8c-Btu"/>
+                        <outlet property="collectionView" destination="c8d-GB-wUj" id="Me6-wA-9KD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
