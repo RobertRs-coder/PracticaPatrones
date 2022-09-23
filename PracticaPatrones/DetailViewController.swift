@@ -14,8 +14,7 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailImage: UIImageView!
     @IBOutlet weak var detailTitle: UILabel!
-    @IBOutlet weak var detailDescription: UILabel!
-    
+    @IBOutlet weak var detailDescription: UITextView!
     
     //MARK: Variables
     

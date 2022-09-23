@@ -26,7 +26,7 @@ struct CharacterModel {
 
 let heroes: CharactersModel = [CharacterModel(id: 01,
                                               name: "Goku",
-                                              description: "The guy",
+                                              description: "Luctus ultrices volutpat semper parturient pellentesque eros egestas, velit tempor a nullam congue nibh vivamus magna, sociosqu neque ullamcorper vitae mattis leo. Lobortis venenatis ridiculus inceptos feugiat erat vestibulum potenti pulvinar ac, integer quam nisl nascetur magnis metus iaculis in habitant lectus, quis ultricies vel nisi litora varius volutpat class. Platea sapien fames primis hac cursus tempor ultrices nec ultricies, eu scelerisque luctus metus nisi nunc maecenas rhoncus elementum nibh, blandit nostra urna pharetra mus phasellus sagittis porttitor. Luctus ultrices volutpat semper parturient pellentesque eros egestas, velit tempor a nullam congue nibh vivamus magna, sociosqu neque ullamcorper vitae mattis leo. Lobortis venenatis ridiculus inceptos feugiat erat vestibulum potenti pulvinar ac, integer quam nisl nascetur magnis metus iaculis in habitant lectus, quis ultricies vel nisi litora varius volutpat class. Platea sapien fames primis hac cursus tempor ultrices nec ultricies, eu scelerisque luctus metus nisi nunc maecenas rhoncus elementum nibh, blandit nostra urna pharetra mus phasellus sagittis porttitor.",
                                               image: "test.jpg",
                                               type: .heroe),
                                CharacterModel(id: 02,
