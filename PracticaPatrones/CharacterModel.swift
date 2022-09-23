@@ -90,5 +90,4 @@ let villains: CharactersModel = [CharacterModel(id: 11,
                                                 type: .villain)
 ]
 
-let sampleCharactersData: CharactersModel = heroes + villains
-
+let sampleCharactersData: CharactersModel = (heroes + villains)
