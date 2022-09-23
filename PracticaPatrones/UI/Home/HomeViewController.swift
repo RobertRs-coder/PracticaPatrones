@@ -38,7 +38,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellViewController.cellIndentifier, for: indexPath) as? CellViewController
         
         if indexPath.row < sampleCharactersData.count {
-            cell?.updateView(data: sampleCharactersData[indexPath.row])
+            let data = sampleCharactersData[indexPath.row]
+            cell?.updateView(data: HomeCellModel(name: data.name, image: data.image))
             }
             return cell ?? UICollectionViewCell()
         }

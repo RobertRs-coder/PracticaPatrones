@@ -33,7 +33,7 @@ class CellViewController: UICollectionViewCell {
     }
         
         //Function to date data for view with data model
-    func updateView(data: CharacterModel) {
+    func updateView(data: HomeCellModel) {
             //Get data for cell
         update(image: data.image)
         update(title: data.name)
