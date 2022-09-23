@@ -50,6 +50,10 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         guard let destinationViewController = detailStoryboard.instantiateInitialViewController() as? DetailViewController else { return }
         
+        if indexPath.row < sampleCharactersData.count {
+            destinationViewController.characterData = sampleCharactersData[indexPath.row]
+        }
+        
         navigationController?.pushViewController(destinationViewController, animated: true)
     }
 }

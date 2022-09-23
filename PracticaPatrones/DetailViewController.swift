@@ -15,15 +15,40 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailImage: UIImageView!
     @IBOutlet weak var detailTitle: UILabel!
     @IBOutlet weak var detailDescription: UILabel!
-
+    
+    
+    //MARK: Variables
+    
+    var characterData: CharacterModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        configureView()
+        
+        guard let characterData = characterData else { return }
+        
+        updateView(data: characterData)
         // Do any additional setup after loading the view.
     }
     
-    private func configureView() {
-        //
+    func updateView(data: CharacterModel) {
+            //Get data for cell
+        update(image: data.image)
+        update(title: data.name)
+        update(description: data.description)
+        }
+        
+        //Function to update image
+        func update(image: String?) {
+            detailImage.image = UIImage(named: image ?? "")
+        }
+        
+        //Function to update label
+        func update(title: String?) {
+            detailTitle.text = title
+        }
+    
+        //Function to update label
+        func update(description: String?) {
+            detailDescription.text = description
     }
 }
