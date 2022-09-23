@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2324312A28DE2BD6003A094B /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2324312928DE2BD6003A094B /* DetailView.storyboard */; };
+		2324312C28DE2BE7003A094B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2324312B28DE2BE7003A094B /* DetailViewController.swift */; };
 		232942EA28D87BD40021B327 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232942E928D87BD40021B327 /* AppDelegate.swift */; };
 		232942EC28D87BD40021B327 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232942EB28D87BD40021B327 /* SceneDelegate.swift */; };
 		232942EE28D87BD40021B327 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232942ED28D87BD40021B327 /* SplashViewController.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2324312928DE2BD6003A094B /* DetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
+		2324312B28DE2BE7003A094B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		232942E628D87BD40021B327 /* PracticaPatrones.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracticaPatrones.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		232942E928D87BD40021B327 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		232942EB28D87BD40021B327 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,15 +113,17 @@
 			children = (
 				232942E928D87BD40021B327 /* AppDelegate.swift */,
 				232942EB28D87BD40021B327 /* SceneDelegate.swift */,
+				2343730A28D93911001C95EA /* CharacterModel.swift */,
 				232942EF28D87BD40021B327 /* SplashView.storyboard */,
 				232942ED28D87BD40021B327 /* SplashViewController.swift */,
 				2329431B28D88F0F0021B327 /* HomeView.storyboard */,
 				2329431928D88EFD0021B327 /* HomeViewController.swift */,
 				23B53C5A28D8BC4F0009B435 /* CellViewController.swift */,
+				2324312928DE2BD6003A094B /* DetailView.storyboard */,
+				2324312B28DE2BE7003A094B /* DetailViewController.swift */,
 				232942F428D87BD50021B327 /* LaunchScreen.storyboard */,
 				232942F228D87BD50021B327 /* Assets.xcassets */,
 				232942F728D87BD50021B327 /* Info.plist */,
-				2343730A28D93911001C95EA /* CharacterModel.swift */,
 			);
 			path = PracticaPatrones;
 			sourceTree = "<group>";
@@ -246,6 +252,7 @@
 				232942F628D87BD50021B327 /* LaunchScreen.storyboard in Resources */,
 				232942F328D87BD50021B327 /* Assets.xcassets in Resources */,
 				2329431C28D88F0F0021B327 /* HomeView.storyboard in Resources */,
+				2324312A28DE2BD6003A094B /* DetailView.storyboard in Resources */,
 				232942F128D87BD40021B327 /* SplashView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2324312C28DE2BE7003A094B /* DetailViewController.swift in Sources */,
 				23B53C5B28D8BC4F0009B435 /* CellViewController.swift in Sources */,
 				232942EE28D87BD40021B327 /* SplashViewController.swift in Sources */,
 				232942EA28D87BD40021B327 /* AppDelegate.swift in Sources */,

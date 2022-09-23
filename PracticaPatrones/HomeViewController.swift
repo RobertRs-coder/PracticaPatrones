@@ -10,12 +10,10 @@ import UIKit
 class HomeViewController: UIViewController {
 
     //MARK: IBOUtlets
-
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         configureView()
         // Do any additional setup after loading the view.
     }
@@ -47,5 +45,11 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //TODO: Navegate to detail
+        
+        let detailStoryboard = UIStoryboard(name: "DetailView", bundle: nil)
+        
+        guard let destinationViewController = detailStoryboard.instantiateInitialViewController() as? DetailViewController else { return }
+        
+        navigationController?.pushViewController(destinationViewController, animated: true)
     }
 }
