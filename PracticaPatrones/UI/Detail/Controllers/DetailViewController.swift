@@ -7,33 +7,29 @@
 
 import UIKit
 
+protocol DetailViewProtocol: AnyObject {
+    func updateView(data: DetailModel)
+    func update(image: String?)
+    func update(title: String?)
+    func update(description: String?)
+}
+
 class DetailViewController: UIViewController {
-
     //MARK: IBOUtlets
-
-
     @IBOutlet weak var detailImage: UIImageView!
     @IBOutlet weak var detailTitle: UILabel!
     @IBOutlet weak var detailDescription: UITextView!
     
     //MARK: Variables
-    
-    var characterData: DetailModel?
-    
-    convenience init(characterData: DetailModel?) {
-        self.init()
-        self.characterData = characterData
-    }
+    var viewModel: DetailViewModelProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        guard let characterData = characterData else { return }
-        
-        updateView(data: characterData)
-        // Do any additional setup after loading the view.
+        viewModel?.onViewsLoaded()
     }
-    
+}
+
+extension DetailViewController: DetailViewProtocol {
     func updateView(data: DetailModel) {
             //Get data for cell
         update(image: data.image)
