@@ -14,7 +14,7 @@ protocol SplashViewModelProtocol {
 final class SplashViewModel {
     
     //MARK: Variables
-    //weak because viewmodel is not create
+    //weak because viewmodel is create after view
     weak var viewDelegate: SplashViewProtocol?
     
     init(viewDelegate: SplashViewProtocol?) {
