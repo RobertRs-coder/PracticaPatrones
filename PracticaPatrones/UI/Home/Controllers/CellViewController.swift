@@ -33,8 +33,11 @@ class CellViewController: UICollectionViewCell {
     }
         
         //Function to date data for view with data model
-    func updateView(data: HomeCellModel) {
+    func updateView(data: HomeCellModel?) {
             //Get data for cell
+        
+        guard let data = data else { return }
+        
         update(image: data.image)
         update(title: data.name)
         }
@@ -45,7 +48,7 @@ class CellViewController: UICollectionViewCell {
         }
         
         //Function to update label
-        func update(title: String) {
+        func update(title: String?) {
             cellLabel.text = title
         }
     }

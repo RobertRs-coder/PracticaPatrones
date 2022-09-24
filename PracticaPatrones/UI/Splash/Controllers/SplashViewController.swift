@@ -7,6 +7,12 @@
 
 import UIKit
 
+
+protocol SplashViewProtocol: AnyObject {
+    func showLoading(_ show: Bool)
+    func navigateToHome()
+}
+
 class SplashViewController: UIViewController {
     
     //MARK: IBOutlets
@@ -16,40 +22,46 @@ class SplashViewController: UIViewController {
     //MARK: Constants
     
     let storyboardName = "HomeView"
-
+    
+    //MARK: Variables
+    
+    var viewModel: SplashViewModelProtocol?
     
     //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        loadData()
+        // Create viewModel & notificate views loaded
+        viewModel = SplashViewModel(viewDelegate: self)
+        viewModel?.onViewsLoaded()
     }
     
-    //We animate the activityIndicator if it is not animated when viewWillAppear
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if !activityIndicator.isAnimating {
-            activityIndicator.startAnimating()
-        }
-    }
     //We stop animating the activityIndicator when viewDidDisappear
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         activityIndicator.stopAnimating()
     }
-    
-    // Function to load data
-    private func loadData() {
-        //Create new thread in main thread after now + 3 seconds and do the clousure -> navigate next view
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
-            // TODO: navigate next view
-            let homeStoryboard = UIStoryboard(name: self.storyboardName, bundle: nil)
-            guard let destinationViewController = homeStoryboard.instantiateInitialViewController() else { return }
-            
-            self.navigationController?.setViewControllers([destinationViewController], animated: true)
-                
-        }
-    }
 
 }
 
+extension SplashViewController: SplashViewProtocol {
+    //Function to show animation activity indicator from viewModel order
+    func showLoading(_ show: Bool) {
+        switch show {
+            case true where !activityIndicator.isAnimating:
+                activityIndicator.startAnimating()
+            case false where activityIndicator.isAnimating:
+            activityIndicator.stopAnimating()
+            
+            default: break
+        }
+    }
+    
+    func navigateToHome() {
+        // Function to navigate next view
+        let homeStoryboard = UIStoryboard(name: self.storyboardName, bundle: nil)
+        
+        guard let destinationViewController = homeStoryboard.instantiateInitialViewController() else { return }
+        
+        self.navigationController?.setViewControllers([destinationViewController], animated: true)
+    }
+}
