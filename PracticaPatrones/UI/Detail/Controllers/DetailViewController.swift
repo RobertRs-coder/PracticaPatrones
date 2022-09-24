@@ -18,9 +18,9 @@ class DetailViewController: UIViewController {
     
     //MARK: Variables
     
-    var characterData: HomeCellModel?
+    var characterData: DetailModel?
     
-    convenience init(characterData: HomeCellModel?) {
+    convenience init(characterData: DetailModel?) {
         self.init()
         self.characterData = characterData
     }
@@ -34,7 +34,7 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func updateView(data: HomeCellModel) {
+    func updateView(data: DetailModel) {
             //Get data for cell
         update(image: data.image)
         update(title: data.name)

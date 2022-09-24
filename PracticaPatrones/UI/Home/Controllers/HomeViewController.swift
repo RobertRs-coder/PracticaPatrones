@@ -9,7 +9,7 @@ import UIKit
 
 protocol HomeViewProtocol: AnyObject {
     func updateViews()
-    func navigateToDetail(with data: HomeCellModel?)
+    func navigateToDetail(with data: DetailModel?)
 }
 
 class HomeViewController: UIViewController {
@@ -33,17 +33,19 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: HomeViewProtocol {
+
     func updateViews() {
         collectionView.reloadData()
     }
     
-    func navigateToDetail(with data: HomeCellModel?) {
+    func navigateToDetail(with data: DetailModel?) {
         let detailStoryboard = UIStoryboard(name: "DetailView", bundle: nil)
         
         guard let destinationViewController = detailStoryboard.instantiateInitialViewController() as? DetailViewController else { return }
         
         //Send data to detail
         destinationViewController.characterData = data
+        
         navigationController?.pushViewController(destinationViewController, animated: true)
         }
     }

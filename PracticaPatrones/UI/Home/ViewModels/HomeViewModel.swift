@@ -9,8 +9,10 @@ import Foundation
 
 protocol HomeViewModelProtocol {
     var dataCount: Int { get }
+    var detailDataCount: Int { get }
     func onViewsLoaded()
     func data (for index: Int) -> HomeCellModel?
+    func detailData (for index: Int) -> DetailModel?
     func itemsSelected(at index: Int)
 }
 
@@ -18,6 +20,8 @@ final class HomeViewModel {
     //MARK: Variables
     private weak var viewDelegate: HomeViewProtocol?
     private var viewData = [HomeCellModel]()
+
+    private var detailViewData = [DetailModel]()
     
     init (viewDelegate: HomeViewProtocol?) {
         self.viewDelegate = viewDelegate
@@ -25,7 +29,13 @@ final class HomeViewModel {
     
     private func loadData() {
         viewData = sampleCharactersData.compactMap {
-            HomeCellModel(name: $0.name, description: $0.description, image: $0.image)
+            HomeCellModel(name: $0.name, image: $0.image)
+        }
+    }
+        
+    private func loadDetailData() {
+        detailViewData = sampleCharactersData.compactMap {
+            DetailModel(name: $0.name, description: $0.description, image: $0.image)
         }
         
         //Notificate view to draw data
@@ -34,9 +44,18 @@ final class HomeViewModel {
 }
 
 extension HomeViewModel: HomeViewModelProtocol {
+    func detailData(for index: Int) -> DetailModel? {
+        guard index < detailDataCount else { return nil}
+        return detailViewData[index]
+    }
+    
     func data(for index: Int) -> HomeCellModel? {
         guard index < dataCount else { return nil}
         return viewData[index]
+    }
+    
+    var detailDataCount:Int {
+        detailViewData.count
     }
     
     var dataCount:Int {
@@ -48,7 +67,7 @@ extension HomeViewModel: HomeViewModelProtocol {
     }
     
     func itemsSelected(at index: Int) {
-        guard let data = data(for: index) else { return }
+        guard let data = detailViewData(for: index) else { return }
         //Notificate view to navigate next screen
         viewDelegate?.navigateToDetail(with: data)
     }
