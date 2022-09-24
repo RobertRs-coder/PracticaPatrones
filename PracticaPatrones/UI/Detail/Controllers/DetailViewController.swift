@@ -18,7 +18,12 @@ class DetailViewController: UIViewController {
     
     //MARK: Variables
     
-    var characterData: CharacterModel?
+    var characterData: HomeCellModel?
+    
+    convenience init(characterData: HomeCellModel?) {
+        self.init()
+        self.characterData = characterData
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +34,7 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func updateView(data: CharacterModel) {
+    func updateView(data: HomeCellModel) {
             //Get data for cell
         update(image: data.image)
         update(title: data.name)

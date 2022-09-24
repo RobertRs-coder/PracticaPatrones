@@ -43,7 +43,7 @@ extension HomeViewController: HomeViewProtocol {
         guard let destinationViewController = detailStoryboard.instantiateInitialViewController() as? DetailViewController else { return }
         
         //Send data to detail
-        
+        destinationViewController.characterData = data
         navigationController?.pushViewController(destinationViewController, animated: true)
         }
     }
