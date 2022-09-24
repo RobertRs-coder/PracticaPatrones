@@ -65,7 +65,13 @@ extension SplashViewController: SplashViewProtocol {
         // Function to navigate next view
         let homeStoryboard = UIStoryboard(name: self.storyboardName, bundle: nil)
         
-        guard let destinationViewController = homeStoryboard.instantiateInitialViewController() else { return }
+        
+        guard let destinationViewController = homeStoryboard.instantiateInitialViewController() as? HomeViewController else { return }
+        
+        //Manual inyection viewModel
+        destinationViewController.viewModel = HomeViewModel(viewDelegate: destinationViewController)
+        
+        
         
         self.navigationController?.setViewControllers([destinationViewController], animated: true)
     }
