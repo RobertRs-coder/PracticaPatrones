@@ -7,15 +7,21 @@
 
 import UIKit
 
+protocol HomeViewProtocol: AnyObject {
+    
+}
+
 class HomeViewController: UIViewController {
 
     //MARK: IBOUtlets
-    
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    //MARK: Variables
+    var viewModel: HomeViewModelProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        // Do any additional setup after loading the view.
     }
     
     private func configureView() {
@@ -24,6 +30,9 @@ class HomeViewController: UIViewController {
     }
 }
 
+extension HomeViewController: HomeViewProtocol {
+    
+}
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
