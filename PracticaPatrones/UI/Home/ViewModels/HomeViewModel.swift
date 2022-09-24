@@ -11,6 +11,7 @@ protocol HomeViewModelProtocol {
     var dataCount: Int { get }
     func onViewsLoaded()
     func data (for index: Int) -> HomeCellModel?
+    func itemsSelected(at index: Int)
 }
 
 final class HomeViewModel {
@@ -27,7 +28,8 @@ final class HomeViewModel {
             HomeCellModel(name: $0.name, image: $0.image)
         }
         
-        //TODO: Notificate view to draw data
+        //Notificate view to draw data
+        viewDelegate?.updateViews()
     }
 }
 
@@ -43,6 +45,12 @@ extension HomeViewModel: HomeViewModelProtocol {
     
     func onViewsLoaded() {
         loadData()
+    }
+    
+    func itemsSelected(at index: Int) {
+        guard let data = data(for: index) else { return }
+        //Notificate view to navigate next screen
+        viewDelegate?.navigateToDetail(with: data)
     }
 }
 

@@ -8,7 +8,8 @@
 import UIKit
 
 protocol HomeViewProtocol: AnyObject {
-    
+    func updateViews()
+    func navigateToDetail(with data: HomeCellModel?)
 }
 
 class HomeViewController: UIViewController {
@@ -32,8 +33,20 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: HomeViewProtocol {
+    func updateViews() {
+        collectionView.reloadData()
+    }
     
-}
+    func navigateToDetail(with data: HomeCellModel?) {
+        let detailStoryboard = UIStoryboard(name: "DetailView", bundle: nil)
+        
+        guard let destinationViewController = detailStoryboard.instantiateInitialViewController() as? DetailViewController else { return }
+        
+        //Send data to detail
+        
+        navigationController?.pushViewController(destinationViewController, animated: true)
+        }
+    }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -54,16 +67,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //TODO: Navegate to detail
         
-        let detailStoryboard = UIStoryboard(name: "DetailView", bundle: nil)
-        
-        guard let destinationViewController = detailStoryboard.instantiateInitialViewController() as? DetailViewController else { return }
-        
-        if indexPath.row < sampleCharactersData.count {
-            destinationViewController.characterData = sampleCharactersData[indexPath.row]
-        }
-        
-        navigationController?.pushViewController(destinationViewController, animated: true)
+        viewModel?.itemsSelected(at: indexPath.row)
     }
 }
