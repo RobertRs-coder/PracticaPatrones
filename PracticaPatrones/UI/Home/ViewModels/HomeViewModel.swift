@@ -64,10 +64,11 @@ extension HomeViewModel: HomeViewModelProtocol {
     
     func onViewsLoaded() {
         loadData()
+        loadDetailData()
     }
     
     func itemsSelected(at index: Int) {
-        guard let data = detailViewData(for: index) else { return }
+        guard let data = detailData(for: index) else { return }
         //Notificate view to navigate next screen
         viewDelegate?.navigateToDetail(with: data)
     }
