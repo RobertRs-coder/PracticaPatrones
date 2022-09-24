@@ -25,7 +25,7 @@ final class HomeViewModel {
     
     private func loadData() {
         viewData = sampleCharactersData.compactMap {
-            HomeCellModel(name: $0.name, image: $0.image)
+            HomeCellModel(name: $0.name, description: $0.description, image: $0.image)
         }
         
         //Notificate view to draw data
