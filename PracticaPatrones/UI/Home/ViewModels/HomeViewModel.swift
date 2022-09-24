@@ -10,6 +10,7 @@ import Foundation
 protocol HomeViewModelProtocol {
     var dataCount: Int { get }
     func onViewsLoaded()
+    func data (for index: Int) -> HomeCellModel?
 }
 
 final class HomeViewModel {
@@ -31,6 +32,11 @@ final class HomeViewModel {
 }
 
 extension HomeViewModel: HomeViewModelProtocol {
+    func data(for index: Int) -> HomeCellModel? {
+        guard index < dataCount else { return nil}
+        return viewData[index]
+    }
+    
     var dataCount:Int {
         viewData.count
     }

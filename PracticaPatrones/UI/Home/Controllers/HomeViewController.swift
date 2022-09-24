@@ -37,7 +37,7 @@ extension HomeViewController: HomeViewProtocol {
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel?.dataCount() ?? 0
+        viewModel?.dataCount ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -47,9 +47,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellViewController.cellIndentifier, for: indexPath) as? CellViewController
         
-        if indexPath.row < sampleCharactersData.count {
-            let data = sampleCharactersData[indexPath.row]
-            cell?.updateView(data: HomeCellModel(name: data.name, image: data.image))
+        if let data = viewModel?.data(for: <#T##Int#>) {
+            cell?.updateView(data: data)
             }
             return cell ?? UICollectionViewCell()
         }
