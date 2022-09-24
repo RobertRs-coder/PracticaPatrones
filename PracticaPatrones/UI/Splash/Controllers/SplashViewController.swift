@@ -27,11 +27,16 @@ class SplashViewController: UIViewController {
     
     var viewModel: SplashViewModelProtocol?
     
+    
+    convenience init(viewModel: SplashViewModelProtocol?) {
+        self.init()
+        self.viewModel = viewModel
+    }
+    
     //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Create viewModel & notificate views loaded
-        viewModel = SplashViewModel(viewDelegate: self)
         viewModel?.onViewsLoaded()
     }
     

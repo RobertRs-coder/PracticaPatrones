@@ -16,10 +16,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
-        let splashSytoryboard = UIStoryboard(name: splashStoryboardName, bundle: nil)
+        let splashStoryboard = UIStoryboard(name: splashStoryboardName, bundle: nil)
         
-        guard let destinationViewController = splashSytoryboard.instantiateInitialViewController() as? SplashViewController else { return }
-
+        guard let destinationViewController = splashStoryboard.instantiateInitialViewController() as? SplashViewController else { return }
+        //Manual inyection viewModel
+        destinationViewController.viewModel = SplashViewModel(viewDelegate: destinationViewController)
+        
         let navigationController = UINavigationController(rootViewController: destinationViewController)
         window.rootViewController = navigationController
         
