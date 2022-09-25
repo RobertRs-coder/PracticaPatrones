@@ -23,6 +23,7 @@ class DetailViewController: UIViewController {
     //MARK: Variables
     var viewModel: DetailViewModelProtocol?
     
+    //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel?.onViewsLoaded()

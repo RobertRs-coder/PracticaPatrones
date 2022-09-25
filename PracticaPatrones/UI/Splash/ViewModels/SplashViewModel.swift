@@ -15,7 +15,7 @@ final class SplashViewModel {
     
     //MARK: Variables
     //weak because viewmodel is create after view
-    weak var viewDelegate: SplashViewProtocol?
+    private weak var viewDelegate: SplashViewProtocol?
     
     init(viewDelegate: SplashViewProtocol?) {
         self.viewDelegate = viewDelegate
@@ -29,7 +29,6 @@ final class SplashViewModel {
             self?.viewDelegate?.showLoading(false)
             // TODO: Notificate view to navigate next view
             self?.viewDelegate?.navigateToHome()
-                
         }
     }
 }

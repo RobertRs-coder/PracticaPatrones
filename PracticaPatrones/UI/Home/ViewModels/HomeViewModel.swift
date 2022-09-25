@@ -21,11 +21,9 @@ final class HomeViewModel {
     private weak var viewDelegate: HomeViewProtocol?
     
     private let characterModelToHomeCellModelMapper: CharacterModelToHomeCellModelMapperProtocol
-    
     private let characterModelToDetailModelMapper: CharacterModelToDetailModelMapperProtocol
     
     private var viewData = [HomeCellModel]()
-
     private var detailViewData = [DetailModel]()
     
     init (viewDelegate: HomeViewProtocol?,
@@ -41,8 +39,6 @@ final class HomeViewModel {
         detailViewData = characterModelToDetailModelMapper.map(sampleCharactersData)
         //Notificate view to draw data
         viewDelegate?.updateViews()
-//        sampleCharactersData.compactMap {
-//            HomeCellModel(name: $0.name, image: $0.image)
         }
 }
 

@@ -16,15 +16,12 @@ protocol SplashViewProtocol: AnyObject {
 class SplashViewController: UIViewController {
     
     //MARK: IBOutlets
-
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     //MARK: Constants
-    
     let storyboardName = "HomeView"
     
     //MARK: Variables
-    
     var viewModel: SplashViewModelProtocol?
     
     
@@ -45,7 +42,6 @@ class SplashViewController: UIViewController {
         super.viewDidDisappear(animated)
         activityIndicator.stopAnimating()
     }
-
 }
 
 extension SplashViewController: SplashViewProtocol {
@@ -68,7 +64,7 @@ extension SplashViewController: SplashViewProtocol {
         
         guard let destinationViewController = homeStoryboard.instantiateInitialViewController() as? HomeViewController else { return }
         
-        //Manual inyection viewModel
+        //Manual inyection viewModel with mappers
         destinationViewController.viewModel = HomeViewModel(viewDelegate: destinationViewController, characterModelToHomeCellModelMapper: CharacterModelToHomeCellModelMapper(), characterModelToDetailModelMapper: CharacterModelToDetailModelMapper())
         
         self.navigationController?.setViewControllers([destinationViewController], animated: true)

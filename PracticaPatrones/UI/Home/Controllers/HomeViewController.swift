@@ -20,6 +20,7 @@ class HomeViewController: UIViewController {
     //MARK: Variables
     var viewModel: HomeViewModelProtocol?
     
+    //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -33,7 +34,6 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: HomeViewProtocol {
-
     func updateViews() {
         collectionView.reloadData()
     }
@@ -45,7 +45,7 @@ extension HomeViewController: HomeViewProtocol {
                 let destinationViewController = detailStoryboard.instantiateInitialViewController() as? DetailViewController else { return }
         
         //Send data to detail
-        destinationViewController.viewModel = DetailViewModel(data: data, viewDelegate: destinationViewController)
+        destinationViewController.viewModel = DetailViewModel(viewDelegate: destinationViewController, data: data)
         
         navigationController?.pushViewController(destinationViewController, animated: true)
         }
@@ -70,7 +70,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         viewModel?.itemsSelected(at: indexPath.row)
     }
 }

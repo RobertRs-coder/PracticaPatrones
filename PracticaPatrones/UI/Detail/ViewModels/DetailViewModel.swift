@@ -16,9 +16,9 @@ final class DetailViewModel {
     
     private weak var viewDelegate: DetailViewProtocol?
     
-    init(data: DetailModel, viewDelegate: DetailViewProtocol) {
-        viewData = data
+    init(viewDelegate: DetailViewProtocol, data: DetailModel) {
         self.viewDelegate = viewDelegate
+        viewData = data
     }
     
 }
