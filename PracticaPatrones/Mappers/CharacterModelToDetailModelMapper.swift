@@ -11,7 +11,7 @@ protocol CharacterModelToDetailModelMapperProtocol {
     func map(_ character: CharacterModel?) -> DetailModel?
 }
 
-class CharacterModelToDetailModelMapper {
+class CharacterModelToDetailModelMapper: CharacterModelToDetailModelMapperProtocol {
     func map(_ characters: CharactersModel?) -> [DetailModel] {
         guard let characters = characters else { return [] }
         return characters.compactMap{ map($0) }

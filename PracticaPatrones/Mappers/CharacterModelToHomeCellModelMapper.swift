@@ -12,7 +12,7 @@ protocol CharacterModelToHomeCellModelMapperProtocol {
     func map(_ character: CharacterModel?) -> HomeCellModel?
 }
     
-class CharacterModelToHomeCellModelMapper {
+class CharacterModelToHomeCellModelMapper: CharacterModelToHomeCellModelMapperProtocol {
     func map(_ characters: CharactersModel?) -> [HomeCellModel] {
         guard let characters = characters else { return [] }
         return characters.compactMap{ map($0) }

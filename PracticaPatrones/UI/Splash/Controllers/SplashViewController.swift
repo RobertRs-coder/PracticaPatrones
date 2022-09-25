@@ -69,9 +69,7 @@ extension SplashViewController: SplashViewProtocol {
         guard let destinationViewController = homeStoryboard.instantiateInitialViewController() as? HomeViewController else { return }
         
         //Manual inyection viewModel
-        destinationViewController.viewModel = HomeViewModel(viewDelegate: destinationViewController)
-        
-        
+        destinationViewController.viewModel = HomeViewModel(viewDelegate: destinationViewController, characterModelToHomeCellModelMapper: CharacterModelToHomeCellModelMapper(), characterModelToDetailModelMapper: CharacterModelToDetailModelMapper())
         
         self.navigationController?.setViewControllers([destinationViewController], animated: true)
     }

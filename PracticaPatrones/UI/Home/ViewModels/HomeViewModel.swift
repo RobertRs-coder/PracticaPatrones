@@ -19,24 +19,34 @@ protocol HomeViewModelProtocol {
 final class HomeViewModel {
     //MARK: Variables
     private weak var viewDelegate: HomeViewProtocol?
+    
+    private let characterModelToHomeCellModelMapper: CharacterModelToHomeCellModelMapperProtocol
+    
+    private let characterModelToDetailModelMapper: CharacterModelToDetailModelMapperProtocol
+    
     private var viewData = [HomeCellModel]()
 
     private var detailViewData = [DetailModel]()
     
-    init (viewDelegate: HomeViewProtocol?) {
+    init (viewDelegate: HomeViewProtocol?,
+          characterModelToHomeCellModelMapper: CharacterModelToHomeCellModelMapperProtocol,
+          characterModelToDetailModelMapper: CharacterModelToDetailModelMapperProtocol) {
         self.viewDelegate = viewDelegate
+        self.characterModelToHomeCellModelMapper = characterModelToHomeCellModelMapper
+        self.characterModelToDetailModelMapper = characterModelToDetailModelMapper
     }
     
     private func loadData() {
-        viewData = sampleCharactersData.compactMap {
-            HomeCellModel(name: $0.name, image: $0.image)
+        viewData = characterModelToHomeCellModelMapper.map(sampleCharactersData)
+        //Notificate view to draw data
+        viewDelegate?.updateViews()
+//        sampleCharactersData.compactMap {
+//            HomeCellModel(name: $0.name, image: $0.image)
         }
-    }
         
     private func loadDetailData() {
-        detailViewData = sampleCharactersData.compactMap {
-            DetailModel(name: $0.name, description: $0.description, image: $0.image)
-        }
+        detailViewData = characterModelToDetailModelMapper.map(sampleCharactersData)
+        
         
         //Notificate view to draw data
         viewDelegate?.updateViews()
