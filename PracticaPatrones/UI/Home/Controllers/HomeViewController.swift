@@ -41,10 +41,10 @@ extension HomeViewController: HomeViewProtocol {
     func navigateToDetail(with data: DetailModel?) {
         let detailStoryboard = UIStoryboard(name: "DetailView", bundle: nil)
         
-        guard let destinationViewController = detailStoryboard.instantiateInitialViewController() as? DetailViewController else { return }
+        guard let data = data,
+                let destinationViewController = detailStoryboard.instantiateInitialViewController() as? DetailViewController else { return }
         
         //Send data to detail
-        guard let data = data else { return }
         destinationViewController.viewModel = DetailViewModel(data: data, viewDelegate: destinationViewController)
         
         navigationController?.pushViewController(destinationViewController, animated: true)

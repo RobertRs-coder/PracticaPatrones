@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2310806B28DFD1B00089868E /* CharacterModelToHomeCellModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2310806A28DFD1B00089868E /* CharacterModelToHomeCellModelMapper.swift */; };
+		2310806D28DFD1D00089868E /* CharacterModelToDetailModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2310806C28DFD1D00089868E /* CharacterModelToDetailModelMapper.swift */; };
 		2324312C28DE2BE7003A094B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2324312B28DE2BE7003A094B /* DetailViewController.swift */; };
 		232942EA28D87BD40021B327 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232942E928D87BD40021B327 /* AppDelegate.swift */; };
 		232942EC28D87BD40021B327 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232942EB28D87BD40021B327 /* SceneDelegate.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2310806A28DFD1B00089868E /* CharacterModelToHomeCellModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModelToHomeCellModelMapper.swift; sourceTree = "<group>"; };
+		2310806C28DFD1D00089868E /* CharacterModelToDetailModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModelToDetailModelMapper.swift; sourceTree = "<group>"; };
 		2324312B28DE2BE7003A094B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		232942E628D87BD40021B327 /* PracticaPatrones.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracticaPatrones.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		232942E928D87BD40021B327 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2310806928DFD1910089868E /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				2310806A28DFD1B00089868E /* CharacterModelToHomeCellModelMapper.swift */,
+				2310806C28DFD1D00089868E /* CharacterModelToDetailModelMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
 		2324312D28DE7720003A094B /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +195,7 @@
 		232942E828D87BD40021B327 /* PracticaPatrones */ = {
 			isa = PBXGroup;
 			children = (
+				2310806928DFD1910089868E /* Mappers */,
 				2324312D28DE7720003A094B /* App */,
 				2380E62128DE785F00AA3DA4 /* Domain */,
 				2324312F28DE7777003A094B /* UI */,
@@ -446,9 +460,11 @@
 				232942EA28D87BD40021B327 /* AppDelegate.swift in Sources */,
 				238E7F4928DF7D3600949472 /* DetailViewModel.swift in Sources */,
 				2343730B28D93911001C95EA /* CharacterModel.swift in Sources */,
+				2310806D28DFD1D00089868E /* CharacterModelToDetailModelMapper.swift in Sources */,
 				232942EC28D87BD40021B327 /* SceneDelegate.swift in Sources */,
 				238E7F4728DF779600949472 /* DetailModel.swift in Sources */,
 				2329431A28D88EFD0021B327 /* HomeViewController.swift in Sources */,
+				2310806B28DFD1B00089868E /* CharacterModelToHomeCellModelMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
