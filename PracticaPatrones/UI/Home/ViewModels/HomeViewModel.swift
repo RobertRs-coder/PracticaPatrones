@@ -38,19 +38,12 @@ final class HomeViewModel {
     
     private func loadData() {
         viewData = characterModelToHomeCellModelMapper.map(sampleCharactersData)
+        detailViewData = characterModelToDetailModelMapper.map(sampleCharactersData)
         //Notificate view to draw data
         viewDelegate?.updateViews()
 //        sampleCharactersData.compactMap {
 //            HomeCellModel(name: $0.name, image: $0.image)
         }
-        
-    private func loadDetailData() {
-        detailViewData = characterModelToDetailModelMapper.map(sampleCharactersData)
-        
-        
-        //Notificate view to draw data
-        viewDelegate?.updateViews()
-    }
 }
 
 extension HomeViewModel: HomeViewModelProtocol {
@@ -74,7 +67,6 @@ extension HomeViewModel: HomeViewModelProtocol {
     
     func onViewsLoaded() {
         loadData()
-        loadDetailData()
     }
     
     func itemsSelected(at index: Int) {
