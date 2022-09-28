@@ -20,6 +20,7 @@ class CharacterModelToHomeCellModelMapper: CharacterModelToHomeCellModelMapperPr
     func map(_ character: Character?) -> HomeCellModel? {
         guard let character = character else { return nil}
         return HomeCellModel(name: character.name,
-                             photo: character.photo)
+                             photo: character.photo,
+                             type: character.type)
     }
 }

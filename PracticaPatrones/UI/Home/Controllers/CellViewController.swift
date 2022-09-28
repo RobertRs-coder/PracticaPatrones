@@ -14,6 +14,7 @@ class CellViewController: UICollectionViewCell {
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var cellLabel: UILabel!
+    @IBOutlet weak var cellCharacterlabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,8 +39,15 @@ class CellViewController: UICollectionViewCell {
         
         guard let data = data else { return }
         
+        switch data.type {
+            case .hero:
+            self.backgroundColor = .blue
+            case .villain:
+            self.backgroundColor = .red
+        }
         updateImage(photo: data.photo)
         update(title: data.name)
+        update(character: data.type.rawValue)
         }
         
         //Function to update image
@@ -52,6 +60,11 @@ class CellViewController: UICollectionViewCell {
         func update(title: String?) {
             cellLabel.text = title
         }
+    
+        //Function to update label
+        func update(character: String?) {
+            cellCharacterlabel.text = character?.capitalizingFirstLetter()
+    }
     }
 
 extension CellViewController {
