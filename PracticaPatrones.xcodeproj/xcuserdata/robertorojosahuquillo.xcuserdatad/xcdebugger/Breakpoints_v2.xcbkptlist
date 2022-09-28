@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E9FEBC02-8813-4B46-9AC2-05040937DEF5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PracticaPatrones/Domain/CharacterModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "Character"
-            landmarkType = "21">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "9AF964DE-68D3-4944-87B6-308BAA7867E7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -34,6 +18,54 @@
             endingLineNumber = "22"
             landmarkName = "HomeViewController"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BA17097C-B60E-4A22-81B5-DA0971F70B46"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PracticaPatrones/Domain/CharacterModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "BA17097C-B60E-4A22-81B5-DA0971F70B46 - 8085f2b33d73bad4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "one-time initialization function for sampleCharactersData"
+                  moduleName = "PracticaPatrones"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/robertorojosahuquillo/Desktop/PracticaPatrones/PracticaPatrones/Domain/CharacterModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "8">
+               </Location>
+               <Location
+                  uuid = "BA17097C-B60E-4A22-81B5-DA0971F70B46 - 38effbd3d969a279"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PracticaPatrones.sampleCharactersData.unsafeMutableAddressor : Swift.Array&lt;PracticaPatrones.Character&gt;"
+                  moduleName = "PracticaPatrones"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/robertorojosahuquillo/Desktop/PracticaPatrones/PracticaPatrones/Domain/CharacterModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
