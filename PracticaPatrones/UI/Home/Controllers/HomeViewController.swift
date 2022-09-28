@@ -19,7 +19,8 @@ class HomeViewController: UIViewController {
     
     //MARK: Variables
     var viewModel: HomeViewModelProtocol?
-    
+//    let sample[Character]Data = Character.[Character]()
+//    
     //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,7 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: HomeViewProtocol {
+    
     func updateViews() {
         collectionView.reloadData()
     }

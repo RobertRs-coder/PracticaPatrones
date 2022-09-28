@@ -10,5 +10,5 @@ import Foundation
 struct DetailModel {
     var name: String?
     var description: String?
-    var image: String?
+    var photo: URL?
 }

@@ -25,6 +25,8 @@ final class SplashViewModel {
     private func loadData() {
         viewDelegate?.showLoading(true)
         //Create new thread in main thread after now + 3 seconds and do the clousure -> navigate next view
+//        let sample[Character]Data = Character.[Character]()
+//        print(sample[Character]Data)
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) { [weak self] in
             self?.viewDelegate?.showLoading(false)
             // TODO: Notificate view to navigate next view

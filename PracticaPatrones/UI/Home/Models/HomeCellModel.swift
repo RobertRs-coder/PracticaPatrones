@@ -10,5 +10,5 @@ import Foundation
 
 struct HomeCellModel {
     var name: String?
-    var image: String?
+    var photo: URL?
 }

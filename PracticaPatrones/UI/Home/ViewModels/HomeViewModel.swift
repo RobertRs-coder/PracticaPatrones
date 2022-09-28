@@ -35,6 +35,7 @@ final class HomeViewModel {
     }
     
     private func loadData() {
+
         viewData = characterModelToHomeCellModelMapper.map(sampleCharactersData)
         detailViewData = characterModelToDetailModelMapper.map(sampleCharactersData)
         //Notificate view to draw data

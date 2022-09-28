@@ -9,7 +9,7 @@ import UIKit
 
 protocol DetailViewProtocol: AnyObject {
     func updateView(data: DetailModel)
-    func update(image: String?)
+    func updateImage(photo: URL?)
     func update(title: String?)
     func update(description: String?)
 }
@@ -31,25 +31,27 @@ class DetailViewController: UIViewController {
 }
 
 extension DetailViewController: DetailViewProtocol {
+
     func updateView(data: DetailModel) {
             //Get data for cell
-        update(image: data.image)
+        updateImage(photo: data.photo)
         update(title: data.name)
         update(description: data.description)
         }
         
         //Function to update image
-        func update(image: String?) {
-            detailImage.image = UIImage(named: image ?? "")
-        }
+    func updateImage(photo: URL?) {
+        guard let photo = photo else { return }
+        detailImage.setImage(url: photo)
+    }
         
-        //Function to update label
-        func update(title: String?) {
-            detailTitle.text = title
-        }
-    
-        //Function to update label
-        func update(description: String?) {
-            detailDescription.text = description
+    //Function to update label
+    func update(title: String?) {
+        detailTitle.text = title
+    }
+
+    //Function to update label
+    func update(description: String?) {
+        detailDescription.text = description
     }
 }

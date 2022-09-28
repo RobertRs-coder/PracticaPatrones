@@ -38,13 +38,14 @@ class CellViewController: UICollectionViewCell {
         
         guard let data = data else { return }
         
-        update(image: data.image)
+        updateImage(photo: data.photo)
         update(title: data.name)
         }
         
         //Function to update image
-        func update(image: String?) {
-            cellImage.image = UIImage(named: image ?? "")
+        func updateImage(photo: URL?) {
+            guard let photo = photo else { return }
+            cellImage.setImage(url: photo)
         }
         
         //Function to update label
